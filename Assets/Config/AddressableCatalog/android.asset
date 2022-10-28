@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb39641dea1e2f34296846ae9df5ced6, type: 3}
+  m_Name: android
+  m_EditorClassIdentifier: 
+  list:
+  - gameId: 2
+    remoteFolderName: demo
+    catalogName: catalog_2022.07.07.07.46.19.hash
+    mainSceneKey: Assets/Scenes/DemoSampleScene.unity
+    posterImage: {fileID: 21300000, guid: ccb2773293f3cf74199bc54defa60f52, type: 3}
+    bannerImage: {fileID: 21300000, guid: 3f94a58dc96cbe44cbbd865fdb3d3fa3, type: 3}
+  - gameId: 1
+    remoteFolderName: poke-a-mango
+    catalogName: catalog_2022.10.19.07.28.58.hash
+    mainSceneKey: Assets/Scenes/JungleDrumGameScene.unity
+    posterImage: {fileID: 21300000, guid: d5d4e400fff891e488fa4de5c3633190, type: 3}
+    bannerImage: {fileID: 21300000, guid: da6f16291c90f12459247e88366247b6, type: 3}
+  - gameId: 3
+    remoteFolderName: Gazoline-Racing
+    catalogName: catalog_2022.10.19.07.18.08.hash
+    mainSceneKey: Assets/Scenes/GazolineRacingGameScene.unity
+    posterImage: {fileID: 21300000, guid: 72addebf086044f4bb5e0ce611798c3b, type: 3}
+    bannerImage: {fileID: 21300000, guid: 97f2274c8cb526e488d89d15ec5f2705, type: 3}
