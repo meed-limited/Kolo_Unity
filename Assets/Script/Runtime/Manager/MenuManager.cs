@@ -45,7 +45,7 @@ namespace SuperUltra.Container
             _profileEditPage.gameObject.SetActive(false);
             _avatarSelectPage.gameObject.SetActive(false);
 
-            _navigationPage.gameObject.SetActive(true);
+            //_navigationPage.gameObject.SetActive(true);
             _gameListPage.gameObject.SetActive(true);
         }
 
