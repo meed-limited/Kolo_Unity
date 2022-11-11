@@ -2,6 +2,7 @@ using Unity.Services.Core;
 using Unity.Services.Mediation;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 namespace SuperUltra.Container
 {
@@ -15,6 +16,8 @@ namespace SuperUltra.Container
         public static AdManager _instance;
         public static Action<bool> _rewardAction;
         IRewardedAd m_RewardedAd;
+        public Button[] _adbuttons;
+        bool _started = false;
 
         void OnEnable()
         {
@@ -197,6 +200,17 @@ namespace SuperUltra.Container
         void AdLoaded(object sender, EventArgs e)
         {
             Debug.Log("Ad loaded");
+            /**
+            if (_started == false)
+            {
+                for (int i = 0; i<_adbuttons.Length; i++)
+                {
+                    _adbuttons[i].interactable = true;
+                }
+                _started = true;
+            }
+            **/
+
         }
 
         void AdFailedLoad(object sender, LoadErrorEventArgs e)
@@ -204,6 +218,7 @@ namespace SuperUltra.Container
             Debug.Log("Failed to load ad " + e.Message);
             _rewardAction?.Invoke(false);
             _rewardAction = null;
+            LoadAd();
         }
 
         void ImpressionEvent(object sender, ImpressionEventArgs args)

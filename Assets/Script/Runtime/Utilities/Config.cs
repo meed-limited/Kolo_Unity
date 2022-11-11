@@ -2,11 +2,17 @@ namespace SuperUltra.Container
 {
     public static class Config
     {
+        #region PlayerPref
+
         public const string CREDENTIAL_KEY_EMAIL = "CREDENTIAL_KEY_EMAIL";
         public const string CREDENTIAL_KEY_PASSWORD = "CREDENTIAL_KEY_PASSWORD";
-        public const string CREDENTIAL_KEY_PLAYFAB_ID = "CREDENTIAL_KEY_PLAYFAB_ID";
+        public const string KEY_AUTH_TOKEN = "KEY_AUTH_TOKEN";
+        public const string KEY_WALLET_ADDRESS = "KEY_WALLET_ADDRESS";
         public const string KEY_SOUND = "KEY_SOUND";
         public const string KEY_MUSIC = "KEY_MUSIC";
+        public const string KEY_NFT_ITEM = "KEY_NFT_ITEM";
+
+        #endregion
 
         #region Client
 
@@ -15,12 +21,12 @@ namespace SuperUltra.Container
         public const float WithDrawLimit = 750f;
 
         #endregion
-        
+
         #region Server
-                
+
         public const string RemoteDevelopCatalogUrl = "http://192.168.56.1:61303";
         public const string RemoteStagingCatalogUrl = "https://ultra-game-board.s3.amazonaws.com";
-        public const string Domain = "https://ultranova.lepricon.city/api/v1/platform/";
+        public const string Domain = "https://kolo-bpnvacqhoq-uc.a.run.app";
         public const string GitBookUrl = "https://superultra.gitbook.io/ultranova";
         public const string FAQUrl = GitBookUrl + "/";
         public const string TermsUrl = GitBookUrl + "/terms-and-conditions";
@@ -29,8 +35,7 @@ namespace SuperUltra.Container
         public const string HowToWithDrawalUrl = GitBookUrl + "/faq/withdrawal";
         public const string YotubeUrl = "https://www.youtube.com/channel/UCMstYEJboRs6K096AP_sz8Q";
         public const string TwitterUrl = "https://twitter.com/ultranova_app";
-        // TODO
-        public const string DiscordUrl = "https://twitter.com/ultranova_app";
+        public const string InstagramUrl = "https://www.instagram.com/superultra.io/";
         // TODO 
         public const string MarketPlaceUrl = "https://twitter.com/ultranova_app";
         // TODO

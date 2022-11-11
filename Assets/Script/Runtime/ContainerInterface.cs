@@ -40,6 +40,8 @@ namespace SuperUltra.Container
         public static event Action<bool> OnMusicVolumeChange;
         public static event Action<bool> OnEffectVolumeChange;
         public static event Func<NFTItem[]> OnGetNFTItemList;
+        public static event Action OnAutoLogin;
+        public static event Action OnUpdateFailed;
 
         public static void EffectVolumeChange(bool isOn) => OnEffectVolumeChange?.Invoke(isOn);
         public static void MusicVolumeChange(bool isOn) => OnMusicVolumeChange?.Invoke(isOn);
@@ -59,6 +61,8 @@ namespace SuperUltra.Container
         public static void RequestRewardedAds(Action<bool> callback) => OnRequestRewardedAds?.Invoke(callback);
         public static VolumeSetting GetVolumeSetting() => OnGetVolumeSetting?.Invoke();
         public static NFTItem[] GetNFTItemList() => OnGetNFTItemList?.Invoke();
+        public static void UpdateAutoLoginInformation() => OnAutoLogin?.Invoke();
+        public static void UpdateFail() => OnUpdateFailed?.Invoke();
 
     }
 

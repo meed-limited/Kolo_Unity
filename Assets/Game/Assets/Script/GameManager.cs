@@ -8,7 +8,6 @@ using DG.Tweening;
 using SuperUltra.GazolineRacing;
 using SuperUltra.Container;
 using Cinemachine;
-using DG.Tweening;
 
 namespace SuperUltra.GazolineRacing
 {
@@ -34,13 +33,16 @@ namespace SuperUltra.GazolineRacing
         CinemachineBasicMultiChannelPerlin noise;
         public bool isEnd = false;
         public bool isStart = false;
-        
+        [SerializeField] GameObject _lifeAdsButton;
+        [SerializeField] GameObject _timeAdsButton;
+        private float _time;
 
 
         private void Awake()
         {
             vcam = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
             noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            _time = GameObject.FindGameObjectWithTag("GameController").GetComponent<Timer>()._timeRemaining;
 
             for (int i = 0; i < 3; i++)
             {
@@ -108,8 +110,7 @@ namespace SuperUltra.GazolineRacing
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    _life += 1;
-                    _lifeBar[_life].SetActive(true);
+                    _lifeBar[i].SetActive(true);
 
                 }
 
@@ -122,8 +123,10 @@ namespace SuperUltra.GazolineRacing
                     _lifeBar[_life].SetActive(true);
 
                 }
-            }
 
+
+            }
+            _lifeAdsButton.SetActive(false);
 
         }
         public void ReduceLife()
@@ -149,5 +152,28 @@ namespace SuperUltra.GazolineRacing
             _finalScoreText.text = _score.ToString("F0");
             //Time.timeScale = 0;
         }
+        public void RequestTimeAds()
+        {
+            ContainerInterface.RequestRewardedAds(
+                RequestTimeRewardedAdCallback
+            );
+        }
+
+        void RequestTimeRewardedAdCallback(bool result)
+        {
+            Debug.Log("RequestLifeRewardedAdCallback " + result);
+            if (result)
+            {
+                AddTime();
+            }
+        }
+        public void AddTime()
+        {
+            _time += 30f;
+            _lifeAdsButton.SetActive(false);
+        }
     }
+
+
+ 
 }

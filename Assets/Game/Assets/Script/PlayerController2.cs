@@ -24,7 +24,6 @@ namespace SuperUltra.GazolineRacing
         private Vector3 velocity;
 
         public Animator animator;
-        private bool isSliding = false;
 
         public float slideDuration = 1.5f;
 

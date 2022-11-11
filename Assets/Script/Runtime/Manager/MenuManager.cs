@@ -11,44 +11,31 @@ namespace SuperUltra.Container
     public class MenuManager : MonoBehaviour
     {
         [SerializeField] Canvas _gameListPage;
-        [SerializeField] Canvas _leaderboardUI;
         [SerializeField] Canvas _seasonPassPage;
-        [SerializeField] Canvas _walletPage;
-        [SerializeField] Canvas _newsPage;
         [SerializeField] Canvas _settingPage;
-        [SerializeField] Canvas _profilePage;
-        [SerializeField] Canvas _profileEditPage;
-        [SerializeField] Canvas _avatarSelectPage;
         [SerializeField] Canvas _navigationPage;
         [SerializeField] NavigationGroupUI _navigationGroupUI;
         [SerializeField] MessagePopUpUI _messagePopUpUI;
-        RectTransform _prevUI;
-        int _prevPagenumber;
-        Dictionary<Canvas, int> _pageToCanvas = new Dictionary<Canvas, int>();
+  
+        //Dictionary<Canvas, int> _pageToCanvas = new Dictionary<Canvas, int>();
 
         void Start()
         {
-            AddPageMapData();
+            //AddPageMapData();
             SetPageInitialState();
-            _prevUI = _gameListPage.GetComponent<RectTransform>();
-            _prevPagenumber = 0;
+      
         }
 
         void SetPageInitialState()
         {
-            _leaderboardUI.gameObject.SetActive(false);
             _seasonPassPage.gameObject.SetActive(false);
-            _walletPage.gameObject.SetActive(false);
-            _newsPage.gameObject.SetActive(false);
             _settingPage.gameObject.SetActive(false);
-            _profilePage.gameObject.SetActive(false);
-            _profileEditPage.gameObject.SetActive(false);
-            _avatarSelectPage.gameObject.SetActive(false);
+
 
             //_navigationPage.gameObject.SetActive(true);
             _gameListPage.gameObject.SetActive(true);
         }
-
+        /**
         void AddPageMapData()
         {
             _pageToCanvas.Add(_gameListPage, (int)Page.GameList);
@@ -62,7 +49,7 @@ namespace SuperUltra.Container
             _pageToCanvas.Add(_profileEditPage, (int)Page.ProfileEdit);
             _pageToCanvas.Add(_avatarSelectPage, (int)Page.AvatarSelect);
         }
-
+        **/
         void SwitchRayCastOnOff(Transform transform, bool isOn = true)
         {
             GraphicRaycaster graphicRaycaster = transform.GetComponent<GraphicRaycaster>();
@@ -72,7 +59,7 @@ namespace SuperUltra.Container
             }
             graphicRaycaster.enabled = isOn;
         }
-
+        /**
         void SlideOutCurrentUI()
         {
             RectTransform prev = _prevUI; // cache current UI, because it will be modified to target beofre animation ends
@@ -99,7 +86,7 @@ namespace SuperUltra.Container
                 });
             }
         }
-
+        **/
         void SlideInCurrentUI(Canvas target)
         {
             ISlidable targetSlidable = target.GetComponent<ISlidable>();
@@ -124,7 +111,7 @@ namespace SuperUltra.Container
                 );
             }
         }
-
+        /**
         void SetPrevPageDirection(Canvas target)
         {
             if (!_pageToCanvas.TryGetValue(target, out int targetPageNumber))
@@ -215,39 +202,9 @@ namespace SuperUltra.Container
             _prevUI = target.GetComponent<RectTransform>();
             _prevPagenumber = targetPageNumber;
         }
+        **/
 
-        public void UpdateUserProfileRequest(string userName, Texture2D texture2D)
-        {
-            LoadingUI.ShowInstance();
-            NetworkManager.UpdateUserProfile(
-                UserData.playFabId,
-                userName,
-                texture2D,
-                OnUpdateUserProfile
-            );
-        }
-
-        public void UpdateUserNameRequest(string userName)
-        {
-            LoadingUI.ShowInstance();
-            NetworkManager.UpdateUserName(
-                UserData.playFabId,
-                userName,
-                OnUpdateUserProfile
-            );
-        }
-
-        void OnUpdateUserProfile(ResponseData data)
-        {
-            if (!data.result)
-            {
-                LoadingUI.HideInstance();
-                MessagePopUpUI.Show(data.message, "Back", () => ToPage(_profilePage));
-                return;
-            }
-            LoadingUI.HideInstance();
-            ToProfilePage();
-        }
+       
 
         public void ShowPopUP(RectTransform content, string actionButtonMessage = "", Action actionButtonCallback = null, bool shouldHideAfterAction = true)
         {
@@ -260,55 +217,7 @@ namespace SuperUltra.Container
 
         }
 
-        public void ToNewsPage() => ToPage(_newsPage);
-        public void ToSettingPage() => ToPage(_settingPage);
-        public void ToProfilePage()
-        {
-            ProfileUI profileUI = _profilePage.GetComponent<ProfileUI>();
-            if (profileUI)
-            {
-                profileUI.Initialize();
-            }
-            ToPage(_profilePage);
-        }
-        public void ToProfileEditPage()
-        {
-            EditProfileUI editProfileUI = _profileEditPage.GetComponent<EditProfileUI>();
-            if (editProfileUI)
-            {
-                editProfileUI.Initialize();
-            }
-            ToPage(_profileEditPage);
-        }
-        public void ToSeasonPage() => ToPage(_seasonPassPage);
-        public void ToGamePage()
-        {
-            MainGameUI menuUI = _gameListPage.GetComponent<MainGameUI>();
-            if (menuUI)
-            {
-                menuUI.Initialize();
-            }
-            ToPage(_gameListPage);
-        }
-        public void ToAvatarSelectPage() => ToPage(_avatarSelectPage);
-        public void ToLeaderboardPage()
-        {
-            LeaderboardUI leaderboardUI = _leaderboardUI.GetComponent<LeaderboardUI>();
-            if (leaderboardUI)
-            {
-                leaderboardUI.Initialize();
-            }
-            ToPage(_leaderboardUI);
-        }
-        public void ToWalletPage()
-        {
-            WalletUI walletUI = _walletPage.GetComponent<WalletUI>();
-            if (walletUI)
-            {
-                walletUI.Initialize();
-            }
-            ToPage(_walletPage);
-        }
+        
 
         public void ToGameScene()
         {

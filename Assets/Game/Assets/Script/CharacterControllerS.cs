@@ -22,8 +22,6 @@ namespace SuperUltra.GazolineRacing
 
         private int _desiredLane = 2; //0= left, 1 , 2, 3=right
         [SerializeField]
-        private float _landeDistance = 5;
-        [SerializeField]
         private ParticleSystem _bananaFx;
         [SerializeField]
         private Transform _bananaPos;
@@ -42,8 +40,7 @@ namespace SuperUltra.GazolineRacing
         [SerializeField]
         GameObject _Firework;
 
-        public delegate void CoinAction();
-        public static event CoinAction OnCoinHit;
+
 
         private void OnEnable()
         {
