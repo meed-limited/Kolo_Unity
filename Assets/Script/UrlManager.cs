@@ -11,7 +11,7 @@ public class UrlManager : MonoBehaviour
 
     public void ToWithdrawUrl()
     {
-        
+        Application.OpenURL("https://kolo.superultra.io/");
     }
 
     public void ToNewsUrl()
