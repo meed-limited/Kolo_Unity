@@ -3,9 +3,9 @@
 
 <br></br>
 
-[![Stargazers](https://img.shields.io/github/stars/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/stargazers)
-[![Issues](https://img.shields.io/github/issues/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/issues)
-[![MIT License](https://img.shields.io/github/license/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/blob/main/License)
+[![Stargazers](https://img.shields.io/github/stars/superultra-io/Kolo_Unity)](https://github.com/superultra-io/Kolo_Unity/stargazers)
+[![Issues](https://img.shields.io/github/issues/superultra-io/Kolo_Unity)](https://github.com/superultra-io/Kolo_Unity/issues)
+[![MIT License](https://img.shields.io/github/license/superultra-io/Kolo_Unity)](https://github.com/superultra-io/Kolo_Unity/blob/main/License)
 
 <br></br>
 
