@@ -1,5 +1,5 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](./Frame 485.png)
 
 <br></br>
 
@@ -16,7 +16,7 @@ KOLO is a DAO Micro-funding gamefi platform using blockchain technology to redis
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./KOLO_App_.gif)
 
 
 ## Build with
