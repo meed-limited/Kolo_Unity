@@ -1,6 +1,13 @@
 
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
+<br></br>
+
+[![Stargazers](https://img.shields.io/github/stars/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/stargazers)
+[![Issues](https://img.shields.io/github/issues/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/issues)
+[![MIT License](https://img.shields.io/github/license/shamrockstudios/Planet-Giant_Game)](https://github.com/shamrockstudios/Planet-Giant_Game/blob/main/License)
+
+<br></br>
 
 # KOLO
 
@@ -53,6 +60,7 @@ As KOLO aims to democratize opportunities, any entrepreneurial projects such as 
 - [![unity]][unity-url]
 - [![c#]][c#-url]
 - [![moralis]][moralis-url]
+
 
 ## How to use
 - Please make sure you have a metamask or other wallets in your phone.
